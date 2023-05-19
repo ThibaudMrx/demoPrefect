@@ -1,12 +1,12 @@
 ###
 ### A complete description of a Prefect Deployment for flow 'log-flow'
 ###
-name: helloPrefect
+name: log-simple
 description: null
-version: 258327589770175bbc240afce563ae2f
+version: 08d81289ab18e5b07dfc5bd1d330dc1d
 # The work queue that will handle this deployment's runs
-work_queue_name: default
-work_pool_name: default-agent-pool
+work_queue_name: kubernetes
+work_pool_name: null
 tags: []
 parameters: {}
 schedule: null
@@ -28,8 +28,17 @@ infrastructure:
 ###
 flow_name: log-flow
 manifest_path: null
-storage: null
-path: /home/svissault/git/exploPrefect/prefect-thibaud/prefect-tutorial/deployment_python
+storage:
+  repository: https://github.com/ThibaudMrx/demoPrefect
+  reference: null
+  access_token: '**********'
+  include_git_objects: true
+  _block_document_id: 9c719562-3fc1-4f5c-88dd-d4f067265991
+  _block_document_name: block-prefect
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
 entrypoint: log_flow.py:log_flow
 parameter_openapi_schema:
   title: Parameters
@@ -42,4 +51,4 @@ parameter_openapi_schema:
   required:
   - name
   definitions: null
-timestamp: '2023-05-18T19:24:39.119884+00:00'
+timestamp: '2023-05-19T17:11:00.996474+00:00'
